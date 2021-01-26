@@ -1,11 +1,7 @@
 require "pry"
 
-class Player
-  attr_accessor :name, :life_points
-  def initialize(x, y)
-    @name =x
-    @life_points =y
+class Game
+  def initialize
   end
 end
 
-binding.pry
