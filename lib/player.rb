@@ -7,7 +7,7 @@ class Player
   def initialize(x, *v)
     @name = x
     @life_points = 10
-    @bot = v 
+    @bot = v
     @bot << self
   end
 
@@ -35,7 +35,6 @@ class Player
       "YOU ARE DIE!"
     end
   end
-
 end
 
 class HumanPlayer < Player
@@ -43,8 +42,8 @@ class HumanPlayer < Player
 
   def initialize(x)
     @name = x
-    @life_points = 10
-    @weapon_level =1
+    @life_points = 100
+    @weapon_level = 1
   end
 
   def show_state
@@ -66,7 +65,7 @@ class HumanPlayer < Player
   end
 
   def search_weapon
-     y = rand(1..6)
+    y = rand(1..6)
 
     puts "Tu as trouvé une arme de niveau #{y}"
 
@@ -83,22 +82,21 @@ class HumanPlayer < Player
 
     case y
     when 1
-      puts  "Tu n'as rien trouvé...  sinf"
+      puts "Tu n'as rien trouvé...  sinf"
     when 2..5
-      puts  "Bravo, tu as trouvé un pack de +50 points de vie !"
+      puts "Bravo, tu as trouvé un pack de +50 points de vie !"
       @life_points += 50
       if @life_points > 100
-        @life_points =100
+        @life_points = 100
       end
     when 6
       puts "Waow, tu as trouvé un pack de +80 points de vie !"
-          @life_points +=80
-          if @life_points > 100
-            @life_points = 100
-          end
+      @life_points += 80
+      if @life_points > 100
+        @life_points = 100
+      end
     else
       "Dam what are you doing bro !"
     end
   end
-
 end
